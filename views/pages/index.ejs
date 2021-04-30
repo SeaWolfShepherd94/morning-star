@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--Include head ejs file-->
+<head>
+  <%- include('../partials/head'); %>
+</head>
+<body>
+
+<p>Thank you for believing in kids with your donation, </p>
+<!--Assign id-->
+<p id="donor"></p>
+
+<!--Assign node js data-->
+<script>
+  var records = [];
+  <% for(var i=0; i < records.length; i++) { %>
+    records.push("<%= records[i] %>");
+  <% } %>
+console.log(records);
+</script>
+<script>
+  try {
+    // Check length of data
+    var l = records.length;
+    if (l == 0) {
+      l = -1;
+    }
+    // Assign index variable
+    var x = 0;
+    // Assign donor element
+    var donor = document.getElementById('donor');
+    // Set Interval for 6 seconds
+    setInterval(recentDonor, 6000);
+    // The following function is called above in the interval
+    function recentDonor() {
+      if (l >= 0) {
+        // element fades out before text is changed
+        $(donor).fadeOut('slow', function() {
+          // Reset if data reaches the end.
+          if (x == records.length) {
+            x = 0;
+          }
+          // New data element is inserted before fading in
+          var record = records[x];
+          $(donor).text(record + '!');
+          $(donor).fadeIn('slow');
+          x++;
+        });
+      }
+    }
+  } catch {
+    alert("Failed to retrieve data! Try again later!")
+  }
+</script>
+
+</body>
+</html>
+

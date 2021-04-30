@@ -1,0 +1,23 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 14
+
+    commands:
+      - npm install
+
+  build:
+    commands:
+      - echo "Unit testing goes here"
+
+  post_build:
+    commands:
+      - npm run deploy
+
+cache:
+  paths:
+    - '~/.npm/**/*'
+    - '/usr/local/share/.cache/**/*'
+    - '/var/cache/apt/**/*'

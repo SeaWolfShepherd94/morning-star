@@ -1,0 +1,32 @@
+{
+  "name": "bim-javascript-functions",
+  "version": "1.0.0",
+  "description": "Serverless JavaScript Functions",
+  "main": "index.js",
+  "scripts": {
+    "start": "serverless offline start",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "serverless deploy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/believeinmeorg/bim-javascript-functions.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/believeinmeorg/bim-javascript-functions/issues"
+  },
+  "homepage": "https://github.com/believeinmeorg/bim-javascript-functions#readme",
+  "dependencies": {
+    "bad-words": "^3.0.4",
+    "express": "^4.17.1",
+    "jsforce": "^1.10.1",
+    "serverless-http": "^2.7.0"
+  },
+  "devDependencies": {
+    "serverless": "^2.29.0",
+    "serverless-offline": "^6.8.0"
+  }
+}
